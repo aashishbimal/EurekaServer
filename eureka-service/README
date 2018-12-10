@@ -1,0 +1,22 @@
+Ist Step Need to Run Eureka Server
+----------------------------------------------------------------------------------
+1. For running Eureka server need to add dependency in POM named "Eureka Server".
+2. Enable eureka server in Main Class By annotating @EnableEurekaServer.
+3. Add properties in application.yml
+    spring:
+      application:
+        name: eureka-service
+
+    server:
+      port: 8070
+
+    eureka:
+      client:
+        register-with-eureka: false
+        fetch-registry: false
+        server:
+          waitTimeInMsWhenSyncEmpty: 0
+        service-url:
+              defaultZone: http://localhost:8070/eureka
+4. Start The Server.
+

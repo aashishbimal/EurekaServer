@@ -1,0 +1,23 @@
+Client Test URL: http://localhost:8072/client/test/
+
+IInd Step Need to Run Client to test service
+----------------------------------------------------------------------------------
+1. For running Client need to add dependency in POM named "Eureka Discovery".
+2. Enable Client discovery in Main Class By annotating @EnableDiscoveryClient.
+3. Add properties in application.yml
+    spring:
+      application:
+        name: hello-client
+
+    eureka:
+      client:
+        register-with-eureka: true
+        fetch-registry: true
+        service-url:
+          defaultZone: http://localhost:8070/eureka/
+      instance:
+        hostname: localhost
+
+    server:
+      port: 8072
+4. Start The Server.
