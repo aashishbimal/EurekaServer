@@ -9,8 +9,17 @@ eureka:
   client:
     register-with-eureka: false
     fetch-registry: false
-    server:
-      waitTimeInMsWhenSyncEmpty: 0
+  server:
+    waitTimeInMsWhenSyncEmpty: 0
+    eviction-interval-timer-in-ms: 9000
+    enable-self-preservation: false
+  instance:
+    hostname: localhost
+    lease-renewal-interval-in-seconds: 2 #Indicates the frequency the client sends heartbeats to server to indicate that it is still alive.
+    lease-expiration-duration-in-seconds: 8 #Indicates the duration the server waits since it received the last heartbeat before it can evict an instance from its registry.
     service-url:
-      defaultZone: http://localhost:8070/eureka
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+
+
+
 

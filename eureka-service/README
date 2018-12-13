@@ -1,3 +1,7 @@
+Eureka Properties
+
+https://dzone.com/articles/the-mystery-of-eurekas-self-preservation
+
 Ist Step Need to Run Eureka Server
 ----------------------------------------------------------------------------------
 1. For running Eureka server need to add dependency in POM named "Eureka Server".
